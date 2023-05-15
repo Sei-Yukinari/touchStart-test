@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>Touchstart</title>
+</head>
+
+<body>
+<h1>TouchStart and Click event</h1>
+<button id="button">click me</button>
+<script>
+
+    // button element
+    var button1 = document.querySelector("button");
+
+
+    // touchstart handler
+    button1.addEventListener("touchStart", onlyTouch, false);
+
+    function onlyTouch(ev) {
+
+        // Call preventDefault() to prevent any further handling
+        console.log("Here a touchstart event is triggered");
+        ev.preventDefault();
+    }
+
+    // click event handler
+    button1.addEventListener("click", onlyClick, false);
+
+    function onlyClick(ev) {
+
+        // Call preventDefault() to prevent any further handling
+        console.log("Here a click event is triggered");
+        ev.preventDefault();
+        console.log("After triggering an event");
+    }
+</script>
+</body>
+
+</html>
